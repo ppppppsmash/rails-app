@@ -7,15 +7,17 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  # def create
-  #   @post = Post.new(post_params)
+  def create
+    @post = Post.new(post_params)
 
-  #   if @post.save
-  #     redirect_to posts_path
-  #   else
-  #     render :new
-  #   end
-  # end
+    if @post.save
+      flash[:success] = "Post was successfully created."
+      redirect_to posts_path
+    else
+      flash[:danger] = "Post was not created."
+      render :new
+    end
+  end
 
   def show
   end
@@ -34,5 +36,16 @@ class PostsController < ApplicationController
   # end
 
   def destroy
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(
+      :title,
+      :start_at,
+      :end_at,
+      :is_all_day,
+      :memo
+    )
   end
 end

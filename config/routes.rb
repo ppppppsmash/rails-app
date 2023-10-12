@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   # get "URL" => "コントローラ#アクション"で定義する
   get "posts" => "posts#index"
+
+  get "posts/new" => "posts#new"
   # resources :posts
 
   # Defines the root path route ("/")
