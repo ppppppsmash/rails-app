@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <thead>
+        <h1>hello world</h1>
+      </thead>
+      <tbody>
+        <% if @posts.count > 0 %>
+          <% @posts.each do |post| %>
+            <tr>
+              <td>
+                <%= post.id %>
+              </td>
+
+              <td></td>
+
+              <td>
+                <%= post.start_at.to_s(:datetime_jp) %>
+              </td>
+
+              <td>
+                <%= post.end_at.to_s(:datetime_jp) %>
+              </td>
+
+              <td>
+                <% if post.is_all_day %>
+                  <strong>◯</strong>
+                <% end %>
+              </td>
+
+              <td>
+                <%= post.updated_at.to_s(:datetime_jp_detail) %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </body>
+</html>
