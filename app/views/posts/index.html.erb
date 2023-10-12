@@ -5,78 +5,101 @@
   </head>
 
   <div>
-    <h2 class="text-3xl font-bold underline">スケジュール一覧</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>
-            ID
-          </th>
+    <h2 class="mb-2 mt-0 text-4xl font-medium leading-tight text-primary">
+      スケジュール一覧
+    </h2>
+    <div class="flex flex-col">
+      <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+          <div class="overflow-hidden">
+            <table class="min-w-full text-left text-sm font-light">
+              <thead class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600 text-white">
+                <tr>
+                  <th scope="col" class="px-6 py-4">
+                    ID
+                  </th>
 
-          <th>
-            タイトル
-          </th>
+                  <th scope="col" class="px-6 py-4">
+                    タイトル
+                  </th>
 
-          <th>
-            開始日
-          </th>
+                  <th scope="col" class="px-6 py-4">
+                    開始日
+                  </th>
 
-          <th>
-            終了日
-          </th>
+                  <th scope="col" class="px-6 py-4">
+                    終了日
+                  </th>
 
-          <th>
-            終日
-          </th>
+                  <th scope="col" class="px-6 py-4">
+                    終日
+                  </th>
 
-          <th>
-            更新日時
-          </th>
+                  <th scope="col" class="px-6 py-4">
+                    更新日時
+                  </th>
 
-          <th>
-            詳細ページへのリンク
-          </th>
+                  <th scope="col" class="px-6 py-4">
+                    詳細ページへのリンク
+                  </th>
 
-          <th>
-            編集ページへのリンク
-          </th>
+                  <th scope="col" class="px-6 py-4">
+                    編集ページへのリンク
+                  </th>
 
-          <th>
-            削除リンク
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <% if @posts.count > 0 %>
-          <% @posts.each do |post| %>
-            <tr>
-              <td>
-                <%= post.id %>
-              </td>
+                  <th scope="col" class="px-6 py-4">
+                    削除リンク
+                  </th>
+              </thead>
+              <tbody>
+                <% if @posts.count > 0 %>
+                  <% @posts.each_with_index do |post, index| %>
+                    <tr class="<%= cycle('border-b bg-white dark:border-neutral-500 dark:bg-neutral-600', 'border-b bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-700', name: 'row_class') %>">
+                      <td class="whitespace-nowrap px-6 py-4 font-medium text-white">
+                        <%= post.id %>
+                      </td>
 
-              <td></td>
+                      <td class="whitespace-nowrap px-6 py-4 text-white">
+                        <%= post.title %>
+                      </td>
 
-              <td>
-                <%= post.start_at %>
-              </td>
+                      <td class="whitespace-nowrap px-6 py-4 text-white">
+                        <%= post.start_at %>
+                      </td>
 
-              <td>
-                <%= post.end_at %>
-              </td>
+                      <td class="whitespace-nowrap px-6 py-4 text-white">
+                        <%= post.end_at %>
+                      </td>
 
-              <td>
-                <% if post.is_all_day %>
-                  <strong>◯</strong>
+                      <td class="whitespace-nowrap px-6 py-4 text-white">
+                        <% if post.is_all_day %>
+                          <strong>◯</strong>
+                        <% end %>
+                      </td>
+
+                      <td class="whitespace-nowrap px-6 py-4 text-white">
+                        <%= post.updated_at %>
+                      </td>
+
+                      <td class="whitespace-nowrap px-6 py-4 text-white">
+                        
+                      </td>
+
+                      <td class="whitespace-nowrap px-6 py-4 text-white">
+                        
+                      </td>
+
+                      <td class="whitespace-nowrap px-6 py-4 text-white">
+                        
+                      </td>
+                    </tr>
+                  <% end %>
                 <% end %>
-              </td>
-
-              <td>
-                <%= post.updated_at %>
-              </td>
-            </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </html>
