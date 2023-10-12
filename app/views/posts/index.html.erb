@@ -1,114 +1,108 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  </head>
+<div>
+  <h2 class="mb-2 mt-0 text-4xl font-medium leading-tight text-primary">
+    スケジュール一覧
+  </h2>
+  <div class="flex flex-col">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div class="overflow-hidden">
+          <table class="min-w-full text-left text-sm font-light">
+            <thead class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600 text-white">
+              <tr>
+                <th scope="col" class="px-6 py-4">
+                  ID
+                </th>
 
-  <div>
-    <h2 class="mb-2 mt-0 text-4xl font-medium leading-tight text-primary">
-      スケジュール一覧
-    </h2>
-    <div class="flex flex-col">
-      <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-          <div class="overflow-hidden">
-            <table class="min-w-full text-left text-sm font-light">
-              <thead class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600 text-white">
-                <tr>
-                  <th scope="col" class="px-6 py-4">
-                    ID
-                  </th>
+                <th scope="col" class="px-6 py-4">
+                  タイトル
+                </th>
 
-                  <th scope="col" class="px-6 py-4">
-                    タイトル
-                  </th>
+                <th scope="col" class="px-6 py-4">
+                  開始日
+                </th>
 
-                  <th scope="col" class="px-6 py-4">
-                    開始日
-                  </th>
+                <th scope="col" class="px-6 py-4">
+                  終了日
+                </th>
 
-                  <th scope="col" class="px-6 py-4">
-                    終了日
-                  </th>
+                <th scope="col" class="px-6 py-4">
+                  終日
+                </th>
 
-                  <th scope="col" class="px-6 py-4">
-                    終日
-                  </th>
+                <th scope="col" class="px-6 py-4">
+                  更新日時
+                </th>
 
-                  <th scope="col" class="px-6 py-4">
-                    更新日時
-                  </th>
+                <th scope="col" class="px-6 py-4">
+                  詳細ページへのリンク
+                </th>
 
-                  <th scope="col" class="px-6 py-4">
-                    詳細ページへのリンク
-                  </th>
+                <th scope="col" class="px-6 py-4">
+                  編集ページへのリンク
+                </th>
 
-                  <th scope="col" class="px-6 py-4">
-                    編集ページへのリンク
-                  </th>
+                <th scope="col" class="px-6 py-4">
+                  削除リンク
+                </th>
+            </thead>
+            <tbody>
+              <% if @posts.count > 0 %>
+                <% @posts.each_with_index do |post, index| %>
+                  <tr class="<%= cycle('border-b bg-white dark:border-neutral-500 dark:bg-neutral-600', 'border-b bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-700', name: 'row_class') %>">
+                    <td class="whitespace-nowrap px-6 py-4 font-medium text-white">
+                      <%= post.id %>
+                    </td>
 
-                  <th scope="col" class="px-6 py-4">
-                    削除リンク
-                  </th>
-              </thead>
-              <tbody>
-                <% if @posts.count > 0 %>
-                  <% @posts.each_with_index do |post, index| %>
-                    <tr class="<%= cycle('border-b bg-white dark:border-neutral-500 dark:bg-neutral-600', 'border-b bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-700', name: 'row_class') %>">
-                      <td class="whitespace-nowrap px-6 py-4 font-medium text-white">
-                        <%= post.id %>
-                      </td>
+                    <td class="whitespace-nowrap px-6 py-4 text-white">
+                      <%= post.title %>
+                    </td>
 
-                      <td class="whitespace-nowrap px-6 py-4 text-white">
-                        <%= post.title %>
-                      </td>
+                    <td class="whitespace-nowrap px-6 py-4 text-white">
+                      <%= post.start_at %>
+                    </td>
 
-                      <td class="whitespace-nowrap px-6 py-4 text-white">
-                        <%= post.start_at %>
-                      </td>
+                    <td class="whitespace-nowrap px-6 py-4 text-white">
+                      <%= post.end_at %>
+                    </td>
 
-                      <td class="whitespace-nowrap px-6 py-4 text-white">
-                        <%= post.end_at %>
-                      </td>
+                    <td class="whitespace-nowrap px-6 py-4 text-white">
+                      <% if post.is_all_day %>
+                        <strong>◯</strong>
+                      <% end %>
+                    </td>
 
-                      <td class="whitespace-nowrap px-6 py-4 text-white">
-                        <% if post.is_all_day %>
-                          <strong>◯</strong>
-                        <% end %>
-                      </td>
+                    <td class="whitespace-nowrap px-6 py-4 text-white">
+                      <%= post.updated_at %>
+                    </td>
 
-                      <td class="whitespace-nowrap px-6 py-4 text-white">
-                        <%= post.updated_at %>
-                      </td>
+                    <td class="whitespace-nowrap px-6 py-4 text-white">
+                      
+                    </td>
 
-                      <td class="whitespace-nowrap px-6 py-4 text-white">
-                        
-                      </td>
+                    <td class="whitespace-nowrap px-6 py-4 text-white">
+                      
+                    </td>
 
-                      <td class="whitespace-nowrap px-6 py-4 text-white">
-                        
-                      </td>
-
-                      <td class="whitespace-nowrap px-6 py-4 text-white">
-                        
-                      </td>
-                    </tr>
-                  <% end %>
-                
-                <% else %>
-                <tr>
-                  <td colspan="10" class="text-center">
-                    現在登録しているスケジュールはありません
-                  </td>
-                </tr>
+                    <td class="whitespace-nowrap px-6 py-4 text-white">
+                      
+                    </td>
+                  </tr>
                 <% end %>
-              </tbody>
-            </table>
-          </div>
+              
+              <% else %>
+              <tr>
+                <td colspan="10" class="text-center">
+                  現在登録しているスケジュールはありません
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-
-    <%= link_to "リンクボタン", posts_new_path, class: "inline-block rounded bg-neutral-800 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] transition duration-150 ease-in-out hover:bg-neutral-800 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-neutral-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] dark:bg-neutral-900 dark:shadow-[0_4px_9px_-4px_#030202] dark:hover:bg-neutral-900 dark:hover:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:focus:bg-neutral-900 dark:focus:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:active:bg-neutral-900 dark:active:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)]" %>
   </div>
-</html>
+
+  <%= link_to "リンクボタン", posts_new_path, class: "inline-block rounded bg-neutral-800 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] transition duration-150 ease-in-out hover:bg-neutral-800 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-neutral-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] dark:bg-neutral-900 dark:shadow-[0_4px_9px_-4px_#030202] dark:hover:bg-neutral-900 dark:hover:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:focus:bg-neutral-900 dark:focus:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:active:bg-neutral-900 dark:active:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)]" %>
+</div>
+
