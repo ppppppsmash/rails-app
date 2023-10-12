@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "posts" => "posts#index"
 
   get "posts/new" => "posts#new"
-  # resources :posts
+  resources :posts
 
   # Defines the root path route ("/")
   # root "posts#index"

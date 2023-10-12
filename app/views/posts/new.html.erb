@@ -1,5 +1,5 @@
 <div class="flex flex-col gap-y-8">
-  <%= form_with model: @post, url: posts_new_path do |f| %>
+  <%= form_with model: @post do |f| %>
   <div class="relative mb-3" data-te-input-wrapper-init>
     <%= 
       f.text_field :title,
@@ -40,7 +40,7 @@
 
   <div class="relative mb-3" data-te-input-wrapper-init>
     <%=
-      f.text_field :start_at,
+      f.text_field :end_at,
       class: "peer block min-h-[auto] w-full rounded border-gray-600 border-1
         bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all
         duration-200 ease-linear focus:placeholder:opacity-100
@@ -101,7 +101,7 @@
 
   <div class="relative mb-3" data-te-input-wrapper-init>
     <%=
-      f.text_area :schedule_memo,
+      f.text_area :memo,
       class: "peer block min-h-[auto] w-full rounded border-gray-600 border-1
         bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all
         duration-200 ease-linear focus:placeholder:opacity-100

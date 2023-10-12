@@ -14,7 +14,7 @@ class PostsController < ApplicationController
       flash[:success] = "Post was successfully created."
       redirect_to posts_path
     else
-      flash[:danger] = "Post was not created."
+      flash.now[:failure] = "Post was not created."
       render :new
     end
   end
@@ -39,6 +39,7 @@ class PostsController < ApplicationController
   end
 
   private
+  
   def post_params
     params.require(:post).permit(
       :title,
