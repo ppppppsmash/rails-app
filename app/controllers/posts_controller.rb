@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
     if @post.update(post_params)
       flash[:success] = "Post was successfully created."
-      redirect_to posts_path
+      redirect_to post_path
     else
       flash.now[:failure] = "Post was not created."
       render :edit
