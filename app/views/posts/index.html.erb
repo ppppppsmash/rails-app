@@ -106,10 +106,9 @@
 
                     <td class="whitespace-nowrap px-6 py-4 text-white">
                       <%=
-                        button_to "削除",
+                        link_to "削除",
                         post_path(post),
-                        method: :delete,
-                        data: { confirm: '本当に削除しますか？' }
+                        data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }
                       %>
                     </td>
                   </tr>
