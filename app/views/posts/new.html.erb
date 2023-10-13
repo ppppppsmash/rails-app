@@ -1,5 +1,5 @@
 <div class="flex flex-col gap-y-8">
-  <%= form_with model: @post do |f| %>
+  <%= form_with model: @post, data: { turbo: false } do |f| %>
   <div class="relative mb-3" data-te-input-wrapper-init>
     <%= 
       f.text_field :title,
@@ -94,7 +94,8 @@
     %>
     <label
       class="inline-block pl-[0.15rem] hover:cursor-pointer"
-      for="checkboxDefault">
+      for="checkboxDefault"
+    >
       終日
     </label>
   </div>
