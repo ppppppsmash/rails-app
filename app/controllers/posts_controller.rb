@@ -27,15 +27,17 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  # def update
-  #   @post = Post.find(params[:id])
+  def update
+    @post = Post.find(params[:id])
 
-  #   if @post.update()
-
-  #   else
-
-  #   end
-  # end
+    if @post.update(post_params)
+      flash[:success] = "Post was successfully created."
+      redirect_to posts_path
+    else
+      flash.now[:failure] = "Post was not created."
+      render :edit
+    end
+  end
 
   def destroy
   end

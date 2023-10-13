@@ -25,18 +25,10 @@
       f.text_field :title,
       class: "peer block min-h-[auto] w-full rounded border-gray-600 border-1
         bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all
-        duration-200 ease-linear focus:placeholder:opacity-100
+        duration-200 ease-linear focus:placeholder:opacity-100 text-red
         peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100
-        motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200
-        dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0",
-      placeholder: "タイトル"
+        motion-reduce:transition-none"
     %>
-    <label
-      for="exampleFormControlInput1"
-      class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[2rem] peer-focus:-translate-x-[0.6rem] peer-focus:scale-[0.9] peer-focus:text-black peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-600 dark:peer-focus:text-primary"
-    >
-      タイトル
-    </label>
   </div>
 
   <div class="relative mb-3" data-te-input-wrapper-init>
@@ -44,18 +36,10 @@
       f.text_field :start_at,
       class: "peer block min-h-[auto] w-full rounded border-gray-600 border-1
         bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all
-        duration-200 ease-linear focus:placeholder:opacity-100
+        duration-200 ease-linear focus:placeholder:opacity-100 text-red
         peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100
-        motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200
-        dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0",
-      placeholder: "開始日"
+        motion-reduce:transition-none"
     %>
-    <label
-      for="exampleFormControlInput1"
-      class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[2rem] peer-focus:-translate-x-[0.6rem] peer-focus:scale-[0.9] peer-focus:text-black peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-600 dark:peer-focus:text-primary"
-    >
-      開始日
-    </label>
   </div>
 
   <div class="relative mb-3" data-te-input-wrapper-init>
@@ -63,18 +47,10 @@
       f.text_field :end_at,
       class: "peer block min-h-[auto] w-full rounded border-gray-600 border-1
         bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all
-        duration-200 ease-linear focus:placeholder:opacity-100
+        duration-200 ease-linear focus:placeholder:opacity-100 text-red
         peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100
-        motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200
-        dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0",
-      placeholder: "終了日"
+        motion-reduce:transition-none"
     %>
-    <label
-      for="exampleFormControlInput1"
-      class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[2rem] peer-focus:-translate-x-[0.6rem] peer-focus:scale-[0.9] peer-focus:text-black peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-600 dark:peer-focus:text-primary"
-    >
-      終了日
-    </label>
   </div>
 
   <div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
@@ -127,20 +103,13 @@
         bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all
         duration-200 ease-linear focus:placeholder:opacity-100
         data-[te-input-state-active]:placeholder:opacity-100
-        motion-reduce:transition-none dark:text-neutral-200
-        dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0",
-      placeholder: "スケジュールメモ" %>
-    <label
-      for="exampleFormControlTextarea1"
-      class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[2rem] peer-focus:-translate-x-[0.6rem] peer-focus:scale-[0.9] peer-focus:text-black peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-600 dark:peer-focus:text-primary"
-    >
-      スケジュールメモ
-    </label>
+        motion-reduce:transition-none"
+    %>
   </div>
 
     <div>
       <%=
-        f.submit "新規登録",
+        f.submit "保存",
         class: "inline-block rounded bg-neutral-800 px-6 pb-2 pt-2.5 text-xs
           font-medium uppercase leading-normal text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)]
           transition duration-150 ease-in-out hover:bg-neutral-800
